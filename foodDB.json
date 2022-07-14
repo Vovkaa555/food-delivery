@@ -1,0 +1,186 @@
+[
+    {
+     "id": 0,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/margarita.png?1657564632",
+     "title": "Маргарита",
+     "price": "160",
+     "delivery": "pizza"
+    },
+    {
+     "id": 1,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/vegetarianskaya.png?1657564632",
+     "title": "Вегетаріанська",
+     "price": "209",
+     "delivery": "pizza"
+    },
+    {
+     "id": 2,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/semeynaya.jpg?1657564632",
+     "title": "Сімейна",
+     "price": "230",
+     "delivery": "pizza"
+    },
+    {
+     "id": 3,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/gavayskaya.png?1657564632",
+     "title": "Гавайська",
+     "price": "160",
+     "delivery": "pizza"
+    },
+    {
+     "id": 4,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/barbekyu.jpg?1657732623",
+     "title": "Барбекю",
+     "price": "225",
+     "delivery": "pizza"
+    },
+    {
+     "id": 5,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/bavarskaya.jpg?1657564632",
+     "title": "Баварська",
+     "price": "220",
+     "delivery": "pizza"
+    },
+    {
+     "id": 6,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/filadelfiya.jpg?1657564632",
+     "title": "Філадельфія",
+     "price": "250",
+     "delivery": "pizza"
+    },
+    {
+     "id": 7,
+     "type": "Піца",
+     "image": "https://pizzahouse.ua/uploads/products/small/1morskaya.jpg?1657564632",
+     "title": "Морська",
+     "price": "280",
+     "delivery": "pizza"
+    },
+    {
+     "id": 8,
+     "type": "Бургер",
+     "image": "https://pizzahouse.ua/uploads/products/small/burger-party-s-nezhnoy-kuritsey-kartofel.png?1657565898",
+     "title": "з куркою",
+     "price": "180",
+     "delivery": "burger"
+    },
+    {
+     "id": 9,
+     "type": "Бургер",
+     "image": "https://pizzahouse.ua/uploads/products/small/burger-party-s-sochnoy-govyadinoy-kartof.jpg?1657565898",
+     "title": "з яловичиною",
+     "price": "200",
+     "delivery": "burger"
+    },
+    {
+     "id": 10,
+     "type": "Гриль",
+     "image": "https://pizzahouse.ua/uploads/products/small/dorado-s-zapechennym-kartofelem.png?1657565895",
+     "title": "Дорадо",
+     "price": "200",
+     "delivery": "gril"
+    },
+    {
+     "id": 11,
+     "type": "Паста",
+     "image": "https://pizzahouse.ua/uploads/products/small/pasta-s-kuritsey.png?1657564679",
+     "title": "з куркою",
+     "price": "125",
+     "delivery": "pasta"
+    },
+    {
+     "id": 12,
+     "type": "Паста",
+     "image": "https://pizzahouse.ua/uploads/products/small/pasta-karbonara.png?1657564679",
+     "title": "Карбонара",
+     "price": "120",
+     "delivery": "pasta"
+    },
+    {
+     "id": 13,
+     "type": "Паста",
+     "image": "https://pizzahouse.ua/uploads/products/small/pasta-syrnaya.png?1657564679",
+     "title": "сирна",
+     "price": "130",
+     "delivery": "pasta"
+    },
+    {
+     "id": 14,
+     "type": "Паста",
+     "image": "https://pizzahouse.ua/uploads/products/small/pasta-boloneze.png?1657564679",
+     "title": "Болоньєзе",
+     "price": "150",
+     "delivery": "pasta"
+    },
+    {
+     "id": 15,
+     "type": "Суші",
+     "image": "https://pizzahouse.ua/uploads/products/small/kaliforniya-tunets.jpg?1657566908",
+     "title": "Каліфорнія",
+     "price": "320",
+     "delivery": "sushi"
+    },
+    {
+     "id": 16,
+     "type": "Суші",
+     "image": "https://pizzahouse.ua/uploads/products/small/filadelfiya-kunseyugor.jpg?1657566908",
+     "title": "Філадельфія",
+     "price": "330",
+     "delivery": "sushi"
+    },
+    {
+     "id": 17,
+     "type": "Салат",
+     "image": "https://pizzahouse.ua/uploads/products/small/salat-olivier.jpg?1657567152",
+     "title": "Олів'є",
+     "price": "105",
+     "delivery": "salad"
+    },
+    {
+     "id": 18,
+     "type": "Салат",
+     "image": "https://pizzahouse.ua/uploads/products/small/salat-grecheskiy-.png?1657567152",
+     "title": "Грецький",
+     "price": "119",
+     "delivery": "salad"
+    },
+    {
+     "id": 19,
+     "type": "Салат",
+     "image": "https://pizzahouse.ua/uploads/products/small/salat-tsezar-s-kuritsey-.png?1657567152",
+     "title": "Цезар",
+     "price": "160",
+     "delivery": "salad"
+    },
+    {
+     "id": 20,
+     "type": "Десерт",
+     "image": "https://pizzahouse.ua/uploads/products/small/sladkiy-roll-s-mango-i-avokado.png?1657567467",
+     "title": "з манго",
+     "price": "149",
+     "delivery": "sweet"
+    },
+    {
+     "id": 21,
+     "type": "Напій",
+     "image": "https://pizzahouse.ua/uploads/products/small/1limonad-klassicheskiy.jpg?1657567636",
+     "title": "Лимонад ",
+     "price": "149",
+     "delivery": "drink"
+    },
+    {
+     "id": 22,
+     "type": "Напій",
+     "image": "https://pizzahouse.ua/uploads/products/small/mors-vishnevyy.jpg?1657567636",
+     "title": "Морс",
+     "price": "149",
+     "delivery": "drink"
+    }
+   ]

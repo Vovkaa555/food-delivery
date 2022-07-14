@@ -1,0 +1,23 @@
+@import './header';
+@import './sidebar';
+@import './content';
+
+
+body {
+    padding: 0;
+    margin: 0;    
+}
+
+.App {
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;  
+    width: 100%;
+    height: 100%;
+    background: rgb(235,226,149);
+    background: linear-gradient(132deg, rgba(235,226,149,1) 11%, rgba(235,198,117,1) 77%);
+    
+}
+
+
+

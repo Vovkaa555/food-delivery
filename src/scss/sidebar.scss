@@ -1,0 +1,31 @@
+.fixed-sidebar {
+    display: flex;
+    float: left;
+    margin-top: 60px;
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    background: #333;
+    color: rgb(255, 255, 255);
+    
+    .sidebar {
+        width:100%;
+        list-style: none;
+        margin:0; 
+        padding: 0;  
+    }
+    ul li {
+        padding: 20px 10px;
+        transition: 1s;
+
+        &:hover {
+            background-color: #fff;
+            color: #333;
+            transition: 1s; 
+        }
+        &.active {
+            background-color: #fff;
+            color: #333;  
+        }    
+    }   
+}
