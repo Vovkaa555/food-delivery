@@ -1,53 +1,61 @@
-
-    
-.header {
+  .header {
     display:flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding: 0 5px;
-    min-width: 500px;
+    min-width: 620px;
     width: 100%;
+    height: 60px;
     position: fixed;        
     background: #333;
     color: #fff;
     top: 0;
-    height: 60px;
-        
-    & span {
-        color: rgb(173, 171, 171);
-        text-decoration: none;
-        padding: 7px 10px;
-        padding-left: 15px;
-        display: inline-flex; 
-        justify-content: center;  
+    list-style: none;
+    z-index: 10;
+    
+    .navigation {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 550px;
+        height: 60px;
+        padding: 5px 0;
+
+        & a {
+            color: rgb(173, 171, 171);
+            padding: 7px 10px;
+            padding-left: 15px;
+            display: inline-flex; 
+            justify-content: center;  
+            text-decoration: none;
             
-        &:hover {
-            color:#fff
-        }
-    }     
+            &:hover {
+                color:#fff
+            }
+        }   
 
-    .logo {
-        font-family: 'Splash', cursive;
-        font-size: 30px;
-        color:#fff;
+        .logo {
+            font-family: 'Splash', cursive;
+            font-size: 30px;
+            color:#fff;
+            }
         }
-
+   
     .cart{
+        align-items: center;
         display: block;
         float: right;
-        margin-right: 15px;
+        margin: 10px 10px;
         width: 100px;
         height: 40px;
         background-color: orange;
         border: 1px solid rgb(226, 152, 13);
         border-radius: 5px;
-
+        
         .cash {
             color: #333;
             font-family: 'Splash', cursive;
             font-size: 20px;
+            text-decoration: none;
+            list-style: none;
         }
     }
 }    

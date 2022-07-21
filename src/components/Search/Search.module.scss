@@ -1,0 +1,37 @@
+.root {
+    position: relative;  
+
+    & input {
+        padding: 0 30px;
+        width: 150px;
+        height: 30px;
+        font-size: 16px;
+        border: 1px solid #333;
+        border-radius: 15px;
+    }
+}
+
+.searchLogo{
+    width: 25px;
+    height: 25px;
+    opacity: 0.3;
+    position: absolute;
+    right: 0,5px;
+    top: 7px;
+    padding-left: 5px;
+    color:#333;
+}
+
+.closeLogo{
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    color:#333;
+    & :hover {
+        color: orange;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+}

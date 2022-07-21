@@ -1,22 +1,23 @@
 import React from 'react';
 
-function Sidebar() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-
-  const onClickCategory = (index) => {
-    setActiveIndex(index);
-  };
-
-  const categories = ['Піца', 'Бургери', 'Гриль', 'Паста', 'Суші', 'Салати', 'Десерти', 'Напої'];
+function Sidebar({ value, onClickCategory }) {
+  const categories = [
+    'Все меню',
+    'Піца',
+    `Бургери`,
+    'Гриль',
+    'Паста',
+    'Суші',
+    'Салати',
+    'Десерти',
+    'Напої',
+  ];
   return (
     <div className="fixed-sidebar">
       <ul className="sidebar">
-        {categories.map((value, i) => (
-          <li
-            key={i}
-            onClick={() => onClickCategory(i)}
-            className={activeIndex === i ? 'active' : ''}>
-            {value}
+        {categories.map((categoryName, i) => (
+          <li key={i} onClick={() => onClickCategory(i)} className={value === i ? 'active' : ''}>
+            {categoryName}
           </li>
         ))}
       </ul>

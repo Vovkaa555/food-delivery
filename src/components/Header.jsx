@@ -1,13 +1,19 @@
+import { Link } from 'react-router-dom';
+
+import Search from '../components/Search/Search.jsx';
+
 function Header() {
   return (
     <div className="header">
-      <nav>
+      <nav className="navigation">
         <span className="logo">Food Delivery</span>
-        <span>Home</span>
-        <span>Clients</span>
+        <Link to="/">Home</Link>
+        <Search />
       </nav>
       <button className="cart">
-        <span className="cash">Кошик</span>
+        <Link to="/EmptyCart" className="cash">
+          Кошик
+        </Link>
       </button>
     </div>
   );
