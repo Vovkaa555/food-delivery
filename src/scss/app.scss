@@ -1,21 +1,28 @@
 @import './header';
 @import './sidebar';
 @import './content';
+@import './cart';
 
 
 body {
+    display: flex;
     padding: 0;
     margin: 0; 
     width: 100%;
-    height: 100%;
-    background: rgb(235,226,149);
-    background: linear-gradient(132deg, rgba(235,226,149,1) 11%, rgba(235,198,117,1) 77%);   
+    height: 100vh;
+    background: linear-gradient(125deg, rgba(164,165,187,1) 0%, rgba(175,160,136,1) 50%, rgba(139,131,128,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ 
 }
 
 .App {
+    margin: 0;
+    padding: 0;
     display: flex;
     font-family: 'Nunito', sans-serif;
-    font-size: 22px;    
+    font-size: 22px; 
+    width: 100%;   
 }
 
 

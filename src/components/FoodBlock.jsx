@@ -1,24 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, minusItem } from '../redux/slices/cartSlice';
 
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { GiShoppingCart } from 'react-icons/gi';
 
-function FoodBlock({ ...obj }) {
-  const [cartCounter, setCount] = useState(0);
+function FoodBlock({ id, type, image, title, price, description, weight }) {
+  const dispatch = useDispatch();
+  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
+  const addedCount = cartItem ? cartItem.count : 0;
+  const onClickAdd = () => {
+    const item = {
+      id,
+      type,
+      title,
+      price,
+      image,
+    };
+
+    dispatch(addItem(item));
+  };
+
+  const onClickMinus = () => {
+    dispatch(minusItem(id));
+  };
+
   return (
     <div className="food-block">
       <div className="food-photo">
         <div className="hidden-info">
-          <span className="description">Склад: {obj.description}</span>
-          <span className="weight">Вага: {obj.weight} гр.</span>
+          <span className="description">Склад: {description}</span>
+          <span className="weight">Вага: {weight} гр.</span>
         </div>
-        <img className="photo" alt="food" src={obj.image}></img>
+        <img className="photo" alt="food" src={image}></img>
         <div className="food-name">
-          {obj.type} {obj.title}
+          {type} {title}
         </div>
-        <div className="price">{obj.price}₴</div>
+        <div className="price">{price}₴</div>
         <div className="buttons-block">
-          <button className="add-to-cart" onClick={() => setCount(cartCounter + 1)}>
+          <button className="add-to-cart" onClick={onClickAdd}>
             <span className="add-to-cart-icon">
               <AiOutlinePlusCircle />
             </span>
@@ -26,9 +46,9 @@ function FoodBlock({ ...obj }) {
             <span className="in-cart">
               <GiShoppingCart />
             </span>
-            <span className="add-to-cart-counter">{cartCounter}</span>
+            {addedCount > 0 && <i className="add-to-cart-counter">{addedCount}</i>}
           </button>
-          <button className="remove-from-cart" onClick={() => setCount(cartCounter - 1)}>
+          <button className="remove-from-cart" onClick={onClickMinus}>
             <span className="remove-from-cart-icon">
               <AiOutlineMinusCircle />
             </span>

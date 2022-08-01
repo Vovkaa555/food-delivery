@@ -270,37 +270,97 @@
     "weight":"250"
     },
     {
-     "id": 27,
+    "id": 27,
+    "category": 3,
+    "type": "Гриль",
+    "image": "https://pizzahouse.ua/uploads/products/small/medalony-iz-svininy-s-sousom-iz-klyukvy.png?1658410829",
+    "title": "медальйони",
+    "price": "255",
+    "description": "Свина вирізка, прошуто, соковитий апельсин, ніжний журавлинний соус та свіжа петрушка.",
+    "weight":"320"
+    },
+    {
+    "id": 28,
+    "category": 3,
+    "type": "Гриль",
+    "image": "https://pizzahouse.ua/uploads/products/small/steyk-iz-svininy-s-zapechennym-kartofele.jpg?1658410829",
+    "title": "стейк",
+    "price": "215",
+    "description": "Стейк зі свинини, запечена картопля, маринована цибуля, гострий перець та журавлинний соус.",
+    "weight":"320"
+    },
+    {
+     "id": 29,
      "category": 3,
      "type": "Гриль",
      "image": "https://pizzahouse.ua/uploads/products/small/dorado-s-zapechennym-kartofelem.png?1657565895",
      "title": "Дорадо",
-     "price": "200",
+     "price": "285",
      "description": "Дорадо, запечена картопля, маринована цибуля та лимон.",
-     "weight":"500"
+     "weight":"340"
     },
     {
-     "id": 28,
+    "id": 30,
+    "category": 3,
+    "type": "Гриль",
+    "image": "https://pizzahouse.ua/uploads/products/small/steyk-iz-lososya-s-parovym-risom.jpg?1658410829",
+    "title": "стейк з лосося",
+    "price": "300",
+    "description": "Стейк лосося, рис, ріпчаста цибуля, солодкий перець, королівські креветки, ніжні вершки, лимон, кунжут.",
+    "weight":"340"
+    },
+    {
+    "id": 31,
+    "category": 3,
+    "type": "Гриль",
+    "image": "https://pizzahouse.ua/uploads/products/small/sibas-farshirovannyy-moreproduktami-s-za.png?1658410829",
+    "title": "сібас",
+    "price": "305",
+    "description": "Сібас, королівські креветки та мідії, ріпчаста цибуля, солодкий перець, ніжні вершки, лимон, запечена картопля, пікантна часникова олія та свіжа петрушка.",
+    "weight":"400"
+    },
+    {
+     "id": 32,
      "category": 4,
      "type": "Паста",
      "image": "https://pizzahouse.ua/uploads/products/small/pasta-s-kuritsey.png?1657564679",
      "title": "з куркою",
      "price": "125",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "description": "Спагеті, вершковий соус, ніжне куряче філе, гриби печериці, капуста броколі, ріпчаста цибуля, сир пармезан та пікантна часникова олія.",
+     "weight":"300"
     },
     {
-     "id": 29,
+    "id": 33,
+    "category": 4,
+    "type": "Паста",
+    "image": "https://pizzahouse.ua/uploads/products/small/pasta-s-proshutto.png?1658411524",
+    "title": "з прошуто",
+    "price": "125",
+    "description": "Спагеті, прошуто, гриби печериці, свіжа морква, ріпчаста цибуля, ніжні вершки, сир пармезан та пікантна часникова олія.",
+    "weight":"300"
+    },
+    {
+    "id": 34,
+    "category": 4,
+    "type": "Паста",
+    "image": "https://pizzahouse.ua/uploads/products/small/pasta-boloneze.png?1657564679",
+    "title": "болоньєзе",
+    "price": "125",
+    "description": "Спагеті, соус болоньєзе, сир пармезан та пікантна часникова олія.",
+    "weight":"300"
+    },
+    {
+     "id": 35,
      "category": 4,
      "type": "Паста",
      "image": "https://pizzahouse.ua/uploads/products/small/pasta-karbonara.png?1657564679",
-     "title": "Карбонара",
-     "price": "120",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "title": "карбонара",
+     "price": "125",
+     "description": "Спагеті, вершковий соус, хрусткий бекон, ріпчаста цибуля, яєчний жовток, сир пармезан та пікантна часникова олія.",
+     "weight":"300"
     },
     {
-     "id": 30,
+     "id": 36,
      "category": 4,
      "type": "Паста",
      "image": "https://pizzahouse.ua/uploads/products/small/pasta-syrnaya.png?1657564679",
@@ -310,93 +370,173 @@
      "weight":"500"
     },
     {
-     "id": 31,
-     "category": 4,
-     "type": "Паста",
-     "image": "https://pizzahouse.ua/uploads/products/small/pasta-boloneze.png?1657564679",
-     "title": "Болоньєзе",
-     "price": "150",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+    "id": 37,
+    "category": 4,
+    "type": "Паста",
+    "image": "https://pizzahouse.ua/uploads/products/small/pasta-s-moreproduktami.png?1658411524",
+    "title": "з креветками",
+    "price": "160",
+    "description": "Спагеті, вершковий соус, багатий мікс морепродуктів, ріпчаста цибуля, сир пармезан та пікантна часникова олія.",
+    "weight":"300"
     },
     {
-     "id": 32,
+     "id": 38,
      "category": 5,
      "type": "Суші",
-     "image": "https://pizzahouse.ua/uploads/products/small/kaliforniya-tunets.jpg?1657566908",
-     "title": "Каліфорнія",
-     "price": "320",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "image": "https://pizzahouse.ua/uploads/products/small/sushi-chuka.jpg?1658412249",
+     "title": "Чука",
+     "price": "60",
+     "description": "Рис, норі, водорості Чука, соус гамадарі та кунжут (2 шт).",
+     "weight":"70"
     },
     {
-     "id": 33,
+     "id": 39,
      "category": 5,
      "type": "Суші",
-     "image": "https://pizzahouse.ua/uploads/products/small/filadelfiya-kunseyugor.jpg?1657566908",
-     "title": "Філадельфія",
-     "price": "330",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "image": "https://pizzahouse.ua/uploads/products/small/sushi-syake.jpg?1658412249",
+     "title": "Сяке",
+     "price": "90",
+     "description": "Рис, лосось (2 шт).",
+     "weight":"60"
     },
     {
-     "id": 34,
+    "id": 40,
+    "category": 5,
+    "type": "Суші",
+    "image": "https://pizzahouse.ua/uploads/products/small/sushi-kunsey.jpg?1658412249",
+    "title": "Кунсей",
+    "price": "80",
+    "description": "Рис, копчений лосось (2 шт).",
+    "weight":"60"
+    },
+    {
+    "id": 41,
+    "category": 5,
+    "type": "Суші",
+    "image": "https://pizzahouse.ua/uploads/products/small/sushi-tunets.jpg?1658412249",
+    "title": "Тунець",
+    "price": "80",
+    "description": "Рис, тунець (2 шт).",
+    "weight":"60"
+    },
+    {
+    "id": 42,
+    "category": 5,
+    "type": "Суші",
+    "image": "https://pizzahouse.ua/uploads/products/small/sushi-unagi.jpg?1658412249",
+    "title": "Унагі",
+    "price": "100",
+    "description": "Рис, норі, вугор, соус унагі та кунжут (2 шт).",
+    "weight":"70"
+    },
+    {
+     "id": 43,
      "category": 6,
      "type": "Салат",
      "image": "https://pizzahouse.ua/uploads/products/small/salat-olivier.jpg?1657567152",
      "title": "Олів'є",
      "price": "105",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "description": "Картопля, морква, соковита шинка, маринований огірок, яйце куряче та перепелине, зелений горошок, майонез, свіжий огірок та салат Лолло Біонда.",
+     "weight":"250"
     },
     {
-     "id": 35,
+    "id": 44,
+    "category": 6,
+    "type": "Салат",
+    "image": "https://pizzahouse.ua/uploads/products/small/salat-chuka.png?1658412897",
+    "title": "Чука",
+    "price": "155",
+    "description": "Мариновані водорості чука, лимон, горіховий соус та мікс кунжуту.",
+    "weight":"150"
+    },
+    {
+     "id": 45,
      "category": 6,
      "type": "Салат",
      "image": "https://pizzahouse.ua/uploads/products/small/salat-grecheskiy-.png?1657567152",
      "title": "Грецький",
-     "price": "119",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "price": "120",
+     "description": "Мікс салату, свіжий огірок, стиглі томати, солодкий перець, витончений сир фета, маслини, маринована синя цибуля, оливкова олія та бальзамічний оцет.",
+     "weight":"210"
     },
     {
-     "id": 36,
+     "id": 46,
      "category": 6,
      "type": "Салат",
      "image": "https://pizzahouse.ua/uploads/products/small/salat-tsezar-s-kuritsey-.png?1657567152",
      "title": "Цезар",
      "price": "160",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "description": "Мікс салату, запечене куряче філе, хрусткий бекон, стиглі томати, яйце перепелине, соус цезар, хрусткі крутони, пікантний сир пармезан.",
+     "weight":"220"
     },
     {
-     "id": 37,
+     "id": 47,
      "category": 7,
      "type": "Десерт",
-     "image": "https://pizzahouse.ua/uploads/products/small/sladkiy-roll-s-mango-i-avokado.png?1657567467",
-     "title": "з манго",
-     "price": "149",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
-     "weight":"500"
+     "image": "https://pizzahouse.ua/uploads/products/small/chizkeyk-brauni.jpg?1658413215",
+     "title": "чізкейк брауні",
+     "price": "90",
+     "description": "Крем-сир, шоколад, какао, масло, вершки, цукор, яйця, ванільний цукор.",
+     "weight":"115"
     },
     {
-     "id": 38,
+    "id": 48,
+    "category": 7,
+    "type": "Десерт",
+    "image": "https://pizzahouse.ua/uploads/products/small/chizkeyk-vishnya.jpg?1658413215",
+    "title": "чізкейк вишня",
+    "price": "90",
+    "description": "Крем-сир, шоколад, какао, вишні, масло, вершки, цукор, яйця, ванільний цукор.",
+    "weight":"115"
+    },
+    {
+    "id": 49,
+    "category": 7,
+    "type": "Десерт",
+    "image": "https://pizzahouse.ua/uploads/products/small/sladkiy-roll-s-bananom-i-kivi.png?1658413215",
+    "title": "рол з бананом",
+    "price": "115",
+    "description": "Млинець, шоколадно-вершковий мус, банан, ківі, волоський горіх, ягідний топінг та м'ята.",
+    "weight":"250"
+    },
+    {
+    "id": 50,
+    "category": 7,
+    "type": "Десерт",
+    "image": "https://pizzahouse.ua/uploads/products/small/sladkiy-roll-s-mango-i-avokado.png?1657567467",
+    "title": "рол з манго",
+    "price": "150",
+    "description": "Млинець, вершковий мус, авокадо, солодкий манго, волоський горіх, шоколадний топінг та м'ята.",
+    "weight":"250"
+    },
+    {
+    "id": 51,
+    "category": 7,
+    "type": "Десерт",
+    "image": "https://pizzahouse.ua/uploads/products/small/dolche.png?1658413215",
+    "title": "Дольче",
+    "price": "165",
+    "description": "Сир моцарела, вершкове масло, солодкі яблука, цукровий сироп та кориця.",
+    "weight":"580"
+    },
+    {
+     "id": 52,
      "category": 8,
      "type": "Напій",
      "image": "https://pizzahouse.ua/uploads/products/small/1limonad-klassicheskiy.jpg?1657567636",
-     "title": "Лимонад ",
+     "title": "Лимонад 0,5л",
      "price": "30",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
+     "description": "М'ята, сироп, содова, лимон.",
      "weight":"500"
     },
     {
-     "id": 39,
+     "id": 53,
      "category": 8,
      "type": "Напій",
      "image": "https://pizzahouse.ua/uploads/products/small/mors-vishnevyy.jpg?1657567636",
      "title": "Морс",
      "price": "30",
-     "description": "Соус томатний, сир моцарела та стиглі томати.",
+     "description": "Морс вишневий.",
      "weight":"500"
     }
    ]

@@ -3,7 +3,7 @@
     float: left;
     position: fixed;
     height: 100%;
-    width: 200px;
+    width: 70px;
     background: #333;
     color: rgb(255, 255, 255);
     
@@ -12,15 +12,18 @@
         list-style: none;
         margin:0; 
         padding: 0;  
+        font-size: 50px;
     }
     ul li {
-        padding: 20px 10px;
+        padding: 10px 10px;
+        line-height: 15px;
         transition: 1s;
 
         &:hover {
             background-color: #fff;
             color: #333;
             transition: 1s; 
+            cursor: pointer;
         }
         &.active {
             background-color: #fff;
