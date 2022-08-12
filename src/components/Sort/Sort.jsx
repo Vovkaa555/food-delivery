@@ -1,21 +1,27 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSort } from '../../redux/slices/filterSlice.js';
+import { setSort, selectSort } from '../../redux/slices/filterSlice.js';
 
 import styles from './Sort.module.scss';
+import {
+  BsSortAlphaDown,
+  BsSortAlphaUpAlt,
+  BsSortNumericDown,
+  BsSortNumericUpAlt,
+} from 'react-icons/bs';
 
 import { FaSortAmountDown } from 'react-icons/fa';
 
 export const sortList = [
-  { name: 'назвою', sortProperty: 'title' },
-  { name: 'назвою', sortProperty: '-title' },
-  { name: 'ціною', sortProperty: 'price' },
-  { name: 'ціною', sortProperty: '-price' },
+  { name: 'назвою', adname: 'за зростанням', sortProperty: '-title', icon: <BsSortAlphaDown /> },
+  { name: 'назвою', adname: 'за спаданням', sortProperty: 'title', icon: <BsSortAlphaUpAlt /> },
+  { name: 'ціною', adname: 'за зростанням', sortProperty: '-price', icon: <BsSortNumericDown /> },
+  { name: 'ціною', adname: 'за зменьшенням', sortProperty: 'price', icon: <BsSortNumericUpAlt /> },
 ];
 
 function Sort() {
   const dispatch = useDispatch();
-  const sort = useSelector((state) => state.filter.sort);
+  const sort = useSelector(selectSort);
   const sortRef = React.useRef();
 
   const [open, setOpen] = React.useState(false);
@@ -37,9 +43,11 @@ function Sort() {
 
   return (
     <div ref={sortRef} className={styles.root} onClick={() => setOpen(!open)}>
-      <FaSortAmountDown />
-      <b>Сортування за:</b>
-      <span>{sort.name}</span>
+      <div>
+        <FaSortAmountDown />
+        <b>Сортування за:</b>
+        <span>{sort.name}</span>
+      </div>
       {open && (
         <div className={styles.popup}>
           <ul>
@@ -48,7 +56,8 @@ function Sort() {
                 key={i}
                 onClick={() => onClickItem(obj)}
                 className={sort.sortProperty === obj.sortProperty ? `active` : ``}>
-                {obj.name}
+                {obj.name} {obj.adname}
+                {obj.icon}
               </li>
             ))}
           </ul>

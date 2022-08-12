@@ -21,7 +21,13 @@
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    padding-left: 90px;    
+    padding-left: 90px; 
+    
+    &__error{
+        width:100%;
+        text-align: center;
+        padding-left: 85px;
+    }
 
     .food-block {
         display: flex;
@@ -100,7 +106,7 @@
             padding: 5px 0;
             font-size: 25px;
             font-weight: bolder;
-            color: rgb(255, 111, 0);
+            color: rgb(255, 115, 0);
         }
 
         .buttons-block{

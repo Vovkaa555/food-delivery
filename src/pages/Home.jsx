@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+
 import qs from 'qs';
 
 import { useNavigate } from 'react-router-dom';
@@ -13,66 +13,72 @@ import Skeleton from '../components//Skeleton';
 import FoodBlock from '../components/FoodBlock';
 import Pagination from '../components/Pagination/Pagination.jsx';
 
-import { setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filterSlice';
+import {
+  setCategoryId,
+  setCurrentPage,
+  setFilters,
+  selectFilter,
+} from '../redux/slices/filterSlice';
+import { fetchFoods, selectFoodData } from '../redux/slices/foodsSlice';
 
-function Home({ searchValue }) {
+function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
-  const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
+  const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
+  const { items, status } = useSelector(selectFoodData);
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
   };
   const onChangePage = (number) => {
     dispatch(setCurrentPage(number));
   };
-  const fetchFoods = () => {
-    setIsLoading(true);
+  const getFoods = async () => {
     const search = searchValue ? `&search=${searchValue}` : ``;
     const category = categoryId > 0 ? `category=${categoryId}` : ``;
     const sortBy = sort.sortProperty.replace('-', '');
     const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
 
-    axios
-      .get(
-        `https://62cc4d598042b16aa7cd0883.mockapi.io/food?${category}&page=${currentPage}&limit=10${search}&sortBy=${sortBy}&order=${order}`,
-      )
-      .then((res) => {
-        setItems(res.data);
-        setIsLoading(false);
-      });
+    dispatch(fetchFoods({ search, category, sortBy, order, currentPage }));
   };
 
   React.useEffect(() => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
       const sort = sortList.find((obj) => obj.sortProperty === params.sortProperty);
-      dispatch(setFilters({ ...params, sort }));
+      if (sort) {
+        params.sort = sort;
+      }
+      dispatch(setFilters(params));
     }
-    isSearch.current = true;
+    isMounted.current = true;
   }, []);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
     if (!isSearch.current) {
-      fetchFoods();
+      getFoods();
     }
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   React.useEffect(() => {
     if (isMounted.current) {
-      const queryString = qs.stringify({
+      const params = {
+        categoryId: categoryId > 0 ? categoryId : null,
         sortProperty: sort.sortProperty,
-        categoryId,
         currentPage,
-      });
-      navigate(`?${queryString}`);
+      };
+
+      const queryString = qs.stringify(params, { skipNulls: true });
+
+      navigate(`/?${queryString}`);
     }
-    isMounted.current = true;
+
+    if (!window.location.search) {
+      getFoods();
+    }
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   const foods = items.map((obj) => <FoodBlock key={obj.id} {...obj} />);
@@ -85,7 +91,13 @@ function Home({ searchValue }) {
         <Search />
         <Sort />
       </div>
-      <div className="main-content">{isLoading ? skeletons : foods}</div>
+      {status === 'error' ? (
+        <div className="main-content__error">
+          <h2>Помилка:( Спробуйте пізніше.</h2>
+        </div>
+      ) : (
+        <div className="main-content">{status === 'loading' ? skeletons : foods}</div>
+      )}
       <Pagination currentPage={currentPage} onChangePage={onChangePage} />
     </div>
   );

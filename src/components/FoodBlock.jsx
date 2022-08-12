@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, minusItem } from '../redux/slices/cartSlice';
+import { addItem, minusItem, selectCartItemById } from '../redux/slices/cartSlice';
 
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { GiShoppingCart } from 'react-icons/gi';
 
 function FoodBlock({ id, type, image, title, price, description, weight }) {
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
+  const cartItem = useSelector(selectCartItemById(id));
   const addedCount = cartItem ? cartItem.count : 0;
   const onClickAdd = () => {
     const item = {

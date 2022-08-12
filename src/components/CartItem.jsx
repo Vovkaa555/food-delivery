@@ -15,32 +15,34 @@ const CartItem = ({ id, type, image, title, price, count }) => {
     dispatch(removeItem(id));
   };
 
-  return (
-    <div className="items-in-busket">
-      <div className="item-description">
-        <img alt="food" src={image} />
-        <span>
-          {type} {title}
-        </span>
+  if (count) {
+    return (
+      <div className="items-in-busket">
+        <div className="item-description">
+          <img alt="food" src={image} />
+          <span>
+            {type} {title}
+          </span>
+        </div>
+        <span>{price}₴</span>
+        <div className="counter">
+          <span onClick={onClickMinus}>
+            <AiFillMinusCircle />
+          </span>
+          <span>{count}</span>
+          <span onClick={onClickPlus}>
+            <AiFillPlusCircle />
+          </span>
+        </div>
+        <div className="total">
+          <span>{count * price}₴</span>
+          <span onClick={onClickRemove}>
+            <AiFillCloseCircle />
+          </span>
+        </div>
       </div>
-      <span>{price}₴</span>
-      <div className="counter">
-        <span onClick={onClickMinus}>
-          <AiFillMinusCircle />
-        </span>
-        <span>{count}</span>
-        <span onClick={onClickPlus}>
-          <AiFillPlusCircle />
-        </span>
-      </div>
-      <div className="total">
-        <span>{count * price}₴</span>
-        <span onClick={onClickRemove}>
-          <AiFillCloseCircle />
-        </span>
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default CartItem;

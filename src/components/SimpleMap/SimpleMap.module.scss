@@ -1,0 +1,53 @@
+.root {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 2rem;
+        background-color: #333;
+        display: inline-block;
+        border-bottom-right-radius: 1px;
+        position: relative;
+        transform: rotate(45deg);
+        border: 3px solid orange;
+        transition: 1s;
+        
+        & p{
+            position: absolute;
+            top: -19px;
+            right: 2px;
+            font-size: 22px;
+            font-weight: bold;
+            color: orange;
+            transform: rotate(-45deg);
+            transition: 1s;
+        }
+
+       
+        .address {
+            opacity: 0;
+            &:hover{
+                display: block;
+                position: relative;
+                right: 20px;
+                width: 100%;
+                top: -40px;
+                padding: 10px 50px; 
+                transform: rotate(-45deg);
+                color: orange;
+                opacity: 1;
+            }
+        }
+        
+    
+        
+    &:hover {
+        background-color: orange;
+        border: 3px solid #333;
+        & p {
+            color:#333;
+            
+        }
+       
+    }
+    
+}
+
