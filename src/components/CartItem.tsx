@@ -1,12 +1,22 @@
 import React from 'react';
 import { AiFillPlusCircle, AiFillMinusCircle, AiFillCloseCircle } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
-import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
+import { addItem, CartItem, minusItem, removeItem } from '../redux/slices/cartSlice';
 
-const CartItem = ({ id, type, image, title, price, count }) => {
+type CartItemProps = {
+  id: string;
+  type: string; 
+  image: string;
+  title: string;
+  price: number;
+  count: number;
+}
+//@ts-ignore
+const CartItemBlock: React.FC<CartItemProps> = ({ id, type, image, title, price, count }) => {
   const dispatch = useDispatch();
+
   const onClickPlus = () => {
-    dispatch(addItem({ id }));
+    dispatch(addItem({ id } as CartItem));
   };
   const onClickMinus = () => {
     dispatch(minusItem(id));
@@ -45,4 +55,4 @@ const CartItem = ({ id, type, image, title, price, count }) => {
   }
 };
 
-export default CartItem;
+export default CartItemBlock;

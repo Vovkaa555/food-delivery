@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   GiHamburgerMenu,
   GiFullPizza,
@@ -12,7 +10,12 @@ import {
   GiBeerBottle,
 } from 'react-icons/gi';
 
-function Sidebar({ value, onChangeCategory }) {
+type CategoriesProps = {
+  value: number;
+  onChangeCategory: (i:number) => void;
+};
+
+const Sidebar: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
   const categories = [
     <GiHamburgerMenu />,
     <GiFullPizza />,

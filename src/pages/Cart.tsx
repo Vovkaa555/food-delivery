@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
 import CartItem from '../components/CartItem';
-import ButtonBack from '../components/ButtonBack/ButtonBack.jsx';
+import ButtonBack from '../components/ButtonBack/ButtonBack';
 import { clearItems } from '../redux/slices/cartSlice';
 
 import { useSelector } from 'react-redux';
@@ -13,25 +13,38 @@ import { AiOutlineDelete } from 'react-icons/ai';
 import EmptyCart from './EmptyCart';
 import { selectCart } from '../redux/slices/cartSlice';
 
-const Cart = () => {
+type FormValues = {
+  username: string;
+  phone: string;
+  date: string;
+  time: string;
+  payment: string;
+  town: string;
+  street: string;
+  house: number;
+  entrance: number;
+  apartment: number;
+};
+
+const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
   const onClickClear = () => {
     dispatch(clearItems());
   };
-  const cartItem = items.map((item) => <CartItem key={item.id} {...item} />);
+  const cartItem = items.map((item: any) => <CartItem key={item.id} {...item} />);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormValues>({
     mode: 'onBlur',
   });
   const switcher = Object.keys(errors).length;
-  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
   const navigate = useNavigate();
   const success = () => navigate('/Success');
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     await sleep(50);
     if (switcher) {
       console.log(data);
@@ -91,9 +104,6 @@ const Cart = () => {
                   min={currentDate}
                   {...register('date', {
                     required: "*поле обов'язкове до заповнення",
-                    pattern: {
-                      message: 'Оберіть дату доставки.',
-                    },
                   })}
                 />
                 {errors.date && <b>{errors.date.message}</b>}
@@ -107,9 +117,6 @@ const Cart = () => {
                   max="23:00"
                   {...register('time', {
                     required: "*поле обов'язкове до заповнення",
-                    pattern: {
-                      message: 'Оберіть час доставки.',
-                    },
                   })}
                 />
                 {errors.time && <b>{errors.time.message}</b>}
@@ -220,7 +227,7 @@ const Cart = () => {
       </div>
       <div className="buttons-block">
         <ButtonBack />
-        <button type="submit" disabled={switcher}>
+        <button type="submit" disabled={Boolean(switcher)}>
           Оформити замовлення
         </button>
       </div>

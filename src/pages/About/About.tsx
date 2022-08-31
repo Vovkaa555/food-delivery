@@ -1,10 +1,10 @@
 import React from 'react';
 
 import styles from './About.module.scss';
-import ButtonBack from '../../components/ButtonBack/ButtonBack.jsx';
-import SimpleMap from '../../components/SimpleMap/SimpleMap.jsx';
+import ButtonBack from '../../components/ButtonBack/ButtonBack';
+import SimpleMap from '../../components/SimpleMap/SimpleMap';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.container}>

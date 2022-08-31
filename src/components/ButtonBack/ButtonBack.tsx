@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './ButtonBack.module.scss';
 
-const ButtonBack = () => {
+const ButtonBack: React.FC = () => {
   return (
     <div className={styles.root}>
       <Link to="/">

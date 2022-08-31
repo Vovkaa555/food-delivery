@@ -1,21 +1,33 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, minusItem, selectCartItemById } from '../redux/slices/cartSlice';
+import { addItem, CartItem, minusItem, selectCartItemById } from '../redux/slices/cartSlice';
 
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { GiShoppingCart } from 'react-icons/gi';
 
-function FoodBlock({ id, type, image, title, price, description, weight }) {
+type FoodBlockProps = {
+  id: string;
+  type: string;
+  image: string; 
+  title: string; 
+  price: number;
+  description: string;
+  weight: number;
+
+}
+
+const FoodBlock: React.FC<FoodBlockProps> = ({ id, type, image, title, price, description, weight }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(id));
   const addedCount = cartItem ? cartItem.count : 0;
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       type,
       title,
       price,
       image,
+      count: 0,
     };
 
     dispatch(addItem(item));

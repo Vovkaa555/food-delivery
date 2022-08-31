@@ -1,7 +1,6 @@
-import React from 'react';
-import ButtonBack from '../components/ButtonBack/ButtonBack.jsx';
+import ButtonBack from '../components/ButtonBack/ButtonBack';
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
   return (
     <div className="empty-cart">
       <h1>Сторінку не знайдено:(</h1>

@@ -2,7 +2,13 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import styles from './SimpleMap.module.scss';
 
-const AnyReactComponent = ({ text }) => (
+type MapsProp = {
+  text: string;
+  lat: number;
+  lng: number;
+}
+
+const AnyReactComponent: React.FC<MapsProp> = ({ text }) => (
   <div className={styles.root}>
     <p>FD</p>
     <div className={styles.address}>{text}</div>
