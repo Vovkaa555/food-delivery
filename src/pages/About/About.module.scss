@@ -3,9 +3,13 @@
     align-items: center;
     flex-direction: column;
     width: 95vw;
-    min-width: 500px;
     margin-top: 70px;
     padding: 5px;
+    @media only screen and (max-width: 550px) {
+        width: 100%;
+        margin-top: 150px;
+    }
+   
     .container{
         display: flex;
         flex-direction: row;
@@ -13,15 +17,17 @@
         flex-wrap: wrap;
         border: 4px solid #333;
         border-radius: 20px;
-        min-width: 550px;
         margin-bottom: 10px;
+       
     }
     .about {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        min-width: 550px;
+        @media only screen and (max-width: 550px) {
+            width: 90%;
+        }
 
         & h4 {
             margin: 10px 0;
@@ -39,6 +45,9 @@
                 & h5, h6, span {
                     margin: 5px;
                     font-size: 17px;
+                    @media only screen and (max-width: 550px) {
+                        font-size: 15px;
+                    }
                 }
             }
         }
@@ -48,6 +57,9 @@
             max-width: 550px;
             width: 95%;
             font-size: x-small;
+            @media only screen and (max-width: 550px) {
+                width: 90%;
+            }
         }
     }
     

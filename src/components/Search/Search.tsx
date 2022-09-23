@@ -3,7 +3,7 @@ import debounce from 'lodash.debounce';
 
 import styles from './Search.module.scss';
 import { AiOutlineSearch, AiFillCloseCircle } from 'react-icons/ai';
-import { setSearchValue } from '../../redux/slices/filterSlice';
+import { setSearchValue } from '../../redux/filter/slice';
 import { useDispatch } from 'react-redux';
 
 const Search: React.FC = () => {

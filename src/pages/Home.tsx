@@ -7,8 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Sidebar from '../components/Sidebar';
 import Search from '../components/Search/Search';
-import Sort from '../components/Sort/Sort';
-import { sortList } from '../components/Sort/Sort';
+import Sort from '../components/Sort/SortPopup';
+import { sortList } from '../components/Sort/SortPopup';
 import Skeleton from '../components/Skeleton';
 import FoodBlock from '../components/FoodBlock';
 import Pagination from '../components/Pagination/Pagination';
@@ -17,10 +17,12 @@ import {
   setCategoryId,
   setCurrentPage,
   setFilters,
-  selectFilter,
-} from '../redux/slices/filterSlice';
-import { fetchFoods, SearchFoodsParams, selectFoodData } from '../redux/slices/foodsSlice';
+} from '../redux/filter/slice';
+import { fetchFoods} from '../redux/foods/asyncActions';
 import { useAppDispatch } from '../redux/store';
+import { selectFilter } from '../redux/filter/selectors';
+import { selectFoodData } from '../redux/foods/selectors';
+import { SearchFoodsParams } from '../redux/foods/types';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -29,9 +31,9 @@ const Home: React.FC = () => {
   const isMounted = React.useRef(false);
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
   const { items, status } = useSelector(selectFoodData);
-  const onChangeCategory = (index: number) => {
+  const onChangeCategory = React.useCallback((index: number) => {
     dispatch(setCategoryId(index));
-  };
+  }, []);
   const onChangePage = (value: number) => {
     dispatch(setCurrentPage(value));
   };
@@ -89,13 +91,14 @@ const Home: React.FC = () => {
 
   const foods = items.map((obj: any) => <FoodBlock key={obj.id} {...obj} />);
   const skeletons = [...new Array(10)].map((_, index) => <Skeleton key={index} />);
+  console.log(foods.length)
 
   return (
     <div className="home">
       <Sidebar value={categoryId} onChangeCategory={onChangeCategory} />
       <div className="searchSort">
+      <Sort value ={sort}/>
         <Search />
-        <Sort />
       </div>
       {status === 'error' ? (
         <div className="main-content__error">
@@ -104,7 +107,7 @@ const Home: React.FC = () => {
       ) : (
         <div className="main-content">{status === 'loading' ? skeletons : foods}</div>
       )}
-      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
+      {(!searchValue && foods.length > 9) && <Pagination currentPage={currentPage} onChangePage={onChangePage} />}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSort, selectSort, Sort, SortPropertyEnum } from '../../redux/slices/filterSlice';
+import { setSort} from '../../redux/filter/slice';
 
 import styles from './Sort.module.scss';
 import {
@@ -11,6 +11,7 @@ import {
 } from 'react-icons/bs';
 
 import { FaSortAmountDown } from 'react-icons/fa';
+import { Sort, SortPropertyEnum } from '../../redux/filter/types';
 
 type PopupClick = MouseEvent & {
   path: Node[];
@@ -20,8 +21,13 @@ type SortItem = {
   name: string;
   adname: string;
   sortProperty: SortPropertyEnum;
-  icon: object;
+  icon: any;
 }
+
+type SortPopupProps = {
+  value: Sort;
+}
+
 export const sortList: SortItem[] = [
   { name: 'назвою', adname: 'за зростанням', sortProperty: SortPropertyEnum.TITLE_DESC, icon: <BsSortAlphaDown /> },
   { name: 'назвою', adname: 'за спаданням', sortProperty: SortPropertyEnum.TITLE_ASC, icon: <BsSortAlphaUpAlt /> },
@@ -29,9 +35,8 @@ export const sortList: SortItem[] = [
   { name: 'ціною', adname: 'за зменьшенням', sortProperty: SortPropertyEnum.PRICE_ASC, icon: <BsSortNumericUpAlt /> },
 ];
 
-const SortPopup: React.FC = () => {
+const SortPopup: React.FC<SortPopupProps> = React.memo(({value}) => {
   const dispatch = useDispatch();
-  const sort = useSelector(selectSort);
   const sortRef = React.useRef<HTMLDivElement>(null);
 
   const [open, setOpen] = React.useState(false);
@@ -58,7 +63,7 @@ const SortPopup: React.FC = () => {
       <div>
         <FaSortAmountDown />
         <b>Сортування за:</b>
-        <span>{sort.name}</span>
+        <span>{value.name}</span>
       </div>
       {open && (
         <div className={styles.popup}>
@@ -67,8 +72,8 @@ const SortPopup: React.FC = () => {
               <li
                 key={i}
                 onClick={() => onClickItem(obj)}
-                className={sort.sortProperty === obj.sortProperty ? `active` : ``}>
-                {obj.name +' '+ obj.adname}
+                className={value.sortProperty === obj.sortProperty ? `active` : ``}>
+                {obj.name} {obj.adname} {obj.icon}
               </li>
             ))}
           </ul>
@@ -76,6 +81,6 @@ const SortPopup: React.FC = () => {
       )}
     </div>
   );
-}
+})
 
 export default SortPopup;

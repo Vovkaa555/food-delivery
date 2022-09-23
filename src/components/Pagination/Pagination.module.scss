@@ -11,6 +11,11 @@
     text-decoration: none;
     list-style: none;
     float:inline-end ;
+    @media only screen and (max-width: 550px) {
+        margin-left: 5px;
+        width: 100%;
+        justify-content: center;
+    }
     li { 
         a {
             color:white;
@@ -27,6 +32,13 @@
             background-color: #333;
             transition: 0.5s;
             cursor:  pointer;
+
+            @media only screen and (max-width: 550px) {
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            line-height: 31px;
+            }
                 &:hover {
                     background-color: orange;
                     color: #333; 

@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form';
 
 import CartItem from '../components/CartItem';
 import ButtonBack from '../components/ButtonBack/ButtonBack';
-import { clearItems } from '../redux/slices/cartSlice';
 
 import { useSelector } from 'react-redux';
 
 import { AiOutlineDelete } from 'react-icons/ai';
 import EmptyCart from './EmptyCart';
-import { selectCart } from '../redux/slices/cartSlice';
+import { selectCart } from '../redux/cart/selectors';
+import { clearItems } from '../redux/cart/slice';
 
 type FormValues = {
   username: string;

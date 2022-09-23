@@ -1,19 +1,33 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectCart } from '../redux/slices/cartSlice';
+import { selectCart } from '../redux/cart/selectors';
 
 const Header: React.FC = () => {
-  const { totalPrice } = useSelector(selectCart);
+  const { items, totalPrice } = useSelector(selectCart);
+  const isMounted = React.useRef(false);
+  React.useEffect(() => {
+    if(isMounted.current) {
+    const json = JSON.stringify(items);
+    localStorage.setItem('cart', json);
+  }
+  isMounted.current = true;
+  }, [items])
+
   return (
     <div className="header">
-      <nav className="navigation">
+      <div className="navigation">
+        <div>
         <Link to="/" className="logo">
           Food Delivery
         </Link>
+        </div>
+        <div>
         <Link to="/About">
-          <div>Контакти</div>
+          <span>Контакти</span>
         </Link>
-      </nav>
+        </div>
+      </div>
       <button className="cart-button">
         <Link to="/Cart" className="cash">
           <span>Кошик</span>

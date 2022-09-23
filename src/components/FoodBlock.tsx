@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, CartItem, minusItem, selectCartItemById } from '../redux/slices/cartSlice';
+import { addItem, minusItem} from '../redux/cart/slice';
 
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { GiShoppingCart } from 'react-icons/gi';
+import { CartItem } from '../redux/cart/types';
+import { selectCartItemById } from '../redux/cart/selectors';
 
 type FoodBlockProps = {
   id: string;

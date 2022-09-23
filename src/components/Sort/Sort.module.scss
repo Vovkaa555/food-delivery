@@ -10,6 +10,11 @@
     background-color: #333;
     color: rgb(168, 168, 168);
     cursor: pointer;
+
+    @media only screen and (max-width: 550px) {
+        width: auto;
+        justify-content: center;
+    }
     & span {
         padding: 5px;
     }
@@ -28,6 +33,10 @@
         width: 210px;
         top: 30px;
         left: 0;
+        @media only screen and (max-width: 550px) {
+            width: 100%;
+            justify-content: center;
+        }
         
         ul{  
         margin: 0;

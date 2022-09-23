@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   GiHamburgerMenu,
   GiFullPizza,
@@ -15,18 +16,20 @@ type CategoriesProps = {
   onChangeCategory: (i:number) => void;
 };
 
-const Sidebar: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
-  const categories = [
-    <GiHamburgerMenu />,
-    <GiFullPizza />,
-    <GiHamburger />,
-    <GiCampfire />,
-    <GiNoodles />,
-    <GiSushis />,
-    <GiFruitBowl />,
-    <GiIceCreamCone />,
-    <GiBeerBottle />,
-  ];
+const categories = [
+  <GiHamburgerMenu />,
+  <GiFullPizza />,
+  <GiHamburger />,
+  <GiCampfire />,
+  <GiNoodles />,
+  <GiSushis />,
+  <GiFruitBowl />,
+  <GiIceCreamCone />,
+  <GiBeerBottle />,
+];
+
+const Sidebar: React.FC<CategoriesProps> = React.memo(({ value, onChangeCategory }) => {
+
   return (
     <div className="fixed-sidebar">
       <ul className="sidebar">
@@ -38,32 +41,6 @@ const Sidebar: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
       </ul>
     </div>
   );
-}
+})
 
 export default Sidebar;
-
-/*     <li>
-            <GiFullPizza /> Піца
-          </li>
-          <li className="active">
-            <GiHamburger /> Бургери
-          </li>
-          <li>
-            <GiFruitBowl /> Боули
-          </li>
-          <li>
-            <GiNoodles /> Паста
-          </li>
-          <li>
-            <GiSushis /> Суші
-          </li>
-          <li>
-            <GiFallingLeaf /> Салати
-          </li>
-          <li>
-            <GiIceCreamCone /> Десерти
-          </li>
-          <li>
-            <GiBeerBottle /> Напої
-          </li>
-          */
